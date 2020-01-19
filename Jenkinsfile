@@ -14,5 +14,5 @@ node {
    stage 'Build'
    // Run the maven build
    sh "${mvnHome}/bin/mvn clean install"
-   step([$class: 'JUnitResultArchiver', testResults: '****/target/surefire-reports/*.xml'])
+   step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
 }
